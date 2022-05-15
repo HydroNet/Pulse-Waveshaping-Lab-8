@@ -1,0 +1,33 @@
+* source LAB 8
+R_R1         N00285 N00314  10k TC=0,0 
+R_R2         N00314 N00318  10k TC=0,0 
+R_R3         N00318 N00322  10k TC=0,0 
+R_R4         N00632 N00314  20k TC=0,0 
+R_R5         N00644 N00318  20k TC=0,0 
+R_R6         N00656 N00322  20k TC=0,0 
+R_R7         0 N00322  20k TC=0,0 
+V_V1         N00285 0 -5V
+V_V2         N00780 0 5V
+M_M1         0 N00980 N00632 N00780 MbreakP           
+M_M2         N02454 N00984 N00632 0 MbreakN           
+M_M3         N02454 N01080 N00644 0 MbreakN           
+M_M4         0 N01088 N00644 N00780 MbreakP           
+M_M5         N02454 N01194 N00656 0 MbreakN           
+M_M6         0 N01202 N00656 N00780 MbreakP           
+V_V3         N01915 0 5V
+M_M7         N00980 N00984 N01915 N01915 MbreakP           
+M_M8         N00980 N00984 0 0 MbreakN           
+M_M10         N01088 N01080 0 0 MbreakN           
+M_M9         N01088 N01080 N01915 N01915 MbreakP           
+M_M12         N01202 N01194 0 0 MbreakN           
+M_M11         N01202 N01194 N01915 N01915 MbreakP           
+V_V4         N00984 0  
++PULSE 5V 0 0 1n 0 .13m .26m
+V_V5         N01080 0  
++PULSE 5V 0 0 1n 0 .06m .13m
+V_V6         N01194 0  
++PULSE 5V 0 0 1n 0 .03m .06m
+X_U1         0 N02454 N02376 N02372 N02891 LM741
+V_V7         N02376 0 15V
+V_V8         N02372 0 -15V
+R_R8         N02454 N02891  20k TC=0,0 

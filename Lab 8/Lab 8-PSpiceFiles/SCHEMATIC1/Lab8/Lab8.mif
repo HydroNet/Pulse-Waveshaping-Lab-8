@@ -1,0 +1,4 @@
+ lib="C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 8\lab 8-pspicefiles\lab 8.lib", offset=42, size=303
+ lib="C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 8\lab 8-pspicefiles\lab 8.lib", offset=346, size=304
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\opamp.lib, offset=58704, size=430
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\opamp.lib, offset=101320, size=1093

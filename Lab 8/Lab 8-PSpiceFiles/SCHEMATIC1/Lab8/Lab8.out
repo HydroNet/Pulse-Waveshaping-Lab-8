@@ -1,0 +1,257 @@
+
+**** 04/24/22 15:35:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Lab8"  [ C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 8\Lab 8-PSpiceFiles\SCHEMATIC1\Lab8.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Lab8.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../lab 8-pspicefiles/lab 8.lib" 
+* From [PSPICE NETLIST] section of C:\Users\Harry\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 600us 0 1us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB 8
+R_R1         N00285 N00314  10k TC=0,0 
+R_R2         N00314 N00318  10k TC=0,0 
+R_R3         N00318 N00322  10k TC=0,0 
+R_R4         N00632 N00314  20k TC=0,0 
+R_R5         N00644 N00318  20k TC=0,0 
+R_R6         N00656 N00322  20k TC=0,0 
+R_R7         0 N00322  20k TC=0,0 
+V_V1         N00285 0 -5V
+V_V2         N00780 0 5V
+M_M1         0 N00980 N00632 N00780 MbreakP           
+M_M2         N02454 N00984 N00632 0 MbreakN           
+M_M3         N02454 N01080 N00644 0 MbreakN           
+M_M4         0 N01088 N00644 N00780 MbreakP           
+M_M5         N02454 N01194 N00656 0 MbreakN           
+M_M6         0 N01202 N00656 N00780 MbreakP           
+V_V3         N01915 0 5V
+M_M7         N00980 N00984 N01915 N01915 MbreakP           
+M_M8         N00980 N00984 0 0 MbreakN           
+M_M10         N01088 N01080 0 0 MbreakN           
+M_M9         N01088 N01080 N01915 N01915 MbreakP           
+M_M12         N01202 N01194 0 0 MbreakN           
+M_M11         N01202 N01194 N01915 N01915 MbreakP           
+V_V4         N00984 0  
++PULSE 5V 0 0 1n 0 .13m .26m
+V_V5         N01080 0  
++PULSE 5V 0 0 1n 0 .06m .13m
+V_V6         N01194 0  
++PULSE 5V 0 0 1n 0 .03m .06m
+X_U1         0 N02454 N02376 N02372 N02891 LM741
+V_V7         N02376 0 15V
+V_V8         N02372 0 -15V
+R_R8         N02454 N02891  20k TC=0,0 
+
+**** RESUMING Lab8.cir ****
+.END
+
+**** 04/24/22 15:35:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Lab8"  [ C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 8\Lab 8-PSpiceFiles\SCHEMATIC1\Lab8.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.x_lm741.dx X_U1.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03 
+         CJO                   10.000000E-12 
+
+
+**** 04/24/22 15:35:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Lab8"  [ C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 8\Lab 8-PSpiceFiles\SCHEMATIC1\Lab8.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.x_lm741.qx 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 04/24/22 15:35:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Lab8"  [ C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 8\Lab 8-PSpiceFiles\SCHEMATIC1\Lab8.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               MbreakP         MbreakN         
+               PMOS            NMOS            
+       LEVEL    1               1            
+           L   10.000000E-06   10.000000E-06 
+           W   60.000000E-06   30.000000E-06 
+         VTO   -1.5             2            
+          KP   55.000000E-06  111.000000E-06 
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA     .04             .01         
+          IS   16.640000E-12   16.640000E-12 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+         CBD    4.000000E-12    2.000000E-12 
+         CBS    4.000000E-12    2.000000E-12 
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO  200.000000E-15  100.000000E-15 
+        CGDO  200.000000E-15  100.000000E-15 
+        CGBO    0               0            
+         TOX    1.200000E-06    1.200000E-06 
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 04/24/22 15:35:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Lab8"  [ C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 8\Lab 8-PSpiceFiles\SCHEMATIC1\Lab8.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00285)   -5.0000 (N00314)   -2.5392 (N00318)   -1.2887 (N00322)    -.6521     
+
+(N00632)    -.1187 (N00644)    -.0608 (N00656)    -.0309 (N00780)    5.0000     
+
+(N00980) 21.66E-09 (N00984)    5.0000 (N01080)    5.0000 (N01088) 21.66E-09     
+
+(N01194)    5.0000 (N01202) 21.66E-09 (N01915)    5.0000 (N02372)  -15.0000     
+
+(N02376)   15.0000 (N02454)-2.306E-06 (N02891)    4.2711                        
+
+(X_U1.x_lm741.6)-405.6E-06            (X_U1.x_lm741.7)    4.2818                
+
+(X_U1.x_lm741.8)    4.2818            (X_U1.x_lm741.9)    0.0000                
+
+(X_U1.x_lm741.10)    -.6077           (X_U1.x_lm741.11)   14.9600               
+
+(X_U1.x_lm741.12)   14.9600           (X_U1.x_lm741.13)    -.5938               
+
+(X_U1.x_lm741.14)    -.5938           (X_U1.x_lm741.53)   14.0000               
+
+(X_U1.x_lm741.54)  -14.0000           (X_U1.x_lm741.90)     .2136               
+
+(X_U1.x_lm741.91)   40.0000           (X_U1.x_lm741.92)  -40.0000               
+
+(X_U1.x_lm741.99)    0.0000           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         2.461E-04
+    V_V2        -1.301E-10
+    V_V3        -6.492E-11
+    V_V4         0.000E+00
+    V_V5         0.000E+00
+    V_V6         0.000E+00
+    V_V7        -1.667E-03
+    V_V8         1.667E-03
+    X_U1.x_lm741.vb  -4.056E-09
+    X_U1.x_lm741.vc   9.730E-12
+    X_U1.x_lm741.ve   2.019E-11
+    X_U1.x_lm741.vlim   2.136E-04
+    X_U1.x_lm741.vlp  -3.979E-11
+    X_U1.x_lm741.vln  -4.022E-11
+
+    TOTAL POWER DISSIPATION   5.12E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 04/24/22 15:35:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Lab8"  [ C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 8\Lab 8-PSpiceFiles\SCHEMATIC1\Lab8.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        4.08
+  Total job time (using Solver 1)   =         .22
+
